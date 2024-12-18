@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="product_sell.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 24px;
+     
+        }
+        .menu {
+            background-color: #333;
+            width: 200px; /* Độ rộng của menu dọc */
+            height: 100vh; /* Chiều cao toàn màn hình */
+            position: fixed; /* Giữ menu cố định khi cuộn */
+            top: 0;
+            left: 0;
+            overflow-y: auto; /* Hiển thị thanh cuộn nếu nội dung quá dài */
+        }
+        .menu a {
+            display: block; /* Hiển thị dưới dạng khối để tạo menu dọc */
+            color: white;
+            text-align: left; /* Căn trái text trong menu */
+            padding: 14px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid #444; /* Tạo viền ngăn cách giữa các mục */
+        }
+        .menu a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            margin-left: 220px; /* Đẩy nội dung sang phải, chừa chỗ cho menu dọc */
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: calc(100% - 200px); /* Chừa khoảng trống bằng chiều rộng menu */
+            margin-left: 200px; /* Canh lề đúng với menu dọc */
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            Trang quản trị
+        </div>
+        <div class="menu">
+            <a href="ManageProducts.aspx">Quản lý sản phẩm</a>
+            <a href="ManageOrders.aspx">Quản lý đơn hàng</a>
+            <a href="ManageRevenue.aspx">Quản lý doanh thu</a>
+            <a href="ManageAccounts.aspx">Quản lý tài khoản</a>
+            <a href="Logout.aspx">Đăng xuất</a>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            &copy; 2024 Product Sell Admin Panel. All Rights Reserved.
+        </div>
+    </form>
+</body>
+</html>
