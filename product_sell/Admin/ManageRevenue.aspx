@@ -9,7 +9,7 @@
             <asp:BoundField DataField="songaydi" HeaderText="Số ngày đi" />
             <asp:BoundField DataField="songuoidi" HeaderText="Số người đi" />
             <asp:BoundField DataField="mapt" HeaderText="Mã phương tiện" />
-
+            
         </Columns>
     </asp:GridView>
 </asp:Content>
