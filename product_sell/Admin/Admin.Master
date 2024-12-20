@@ -68,7 +68,7 @@
             <a href="ManageOrders.aspx">Quản lý đơn hàng</a>
             <a href="ManageRevenue.aspx">Quản lý doanh thu</a>
             <a href="ManageAccounts.aspx">Quản lý tài khoản</a>
-            <a href="Logout.aspx">Đăng xuất</a>
+            <a href="../Login_Register/Login.aspx">Đăng xuất</a>
         </div>
         <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

@@ -68,9 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddAccounts.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\ManageAccounts.aspx" />
     <Content Include="Admin\ManageRevenue.aspx" />
     <Content Include="Admin\Update_Account.aspx" />
+    <Content Include="Login_Register\ForgotPassword.aspx" />
+    <Content Include="Login_Register\Login.aspx" />
+    <Content Include="Login_Register\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +92,13 @@
     </Compile>
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\DataUtil.cs" />
     <Compile Include="Admin\ManageAccounts.aspx.cs">
@@ -111,6 +122,27 @@
     <Compile Include="Admin\Update_Account.aspx.designer.cs">
       <DependentUpon>Update_Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login_Register\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_Register\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Register\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_Register\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Register\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login_Register\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +158,7 @@
   <ItemGroup>
     <Folder Include="Client\" />
     <Folder Include="Database\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
