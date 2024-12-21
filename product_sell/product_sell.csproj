@@ -68,8 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddAccounts.aspx" />
+    <Content Include="Admin\Add_Product.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Edit_Product.aspx" />
     <Content Include="Admin\ManageAccounts.aspx" />
+    <Content Include="Admin\ManageProducts.aspx" />
     <Content Include="Admin\ManageRevenue.aspx" />
     <Content Include="Admin\Update_Account.aspx" />
     <Content Include="Login_Register\ForgotPassword.aspx" />
@@ -86,6 +89,13 @@
     <Compile Include="Admin\AddAccounts.aspx.designer.cs">
       <DependentUpon>AddAccounts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Add_Product.aspx.cs">
+      <DependentUpon>Add_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Add_Product.aspx.designer.cs">
+      <DependentUpon>Add_Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,6 +103,7 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Category.cs" />
     <Compile Include="Admin\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -101,12 +112,26 @@
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\DataUtil.cs" />
+    <Compile Include="Admin\Edit_Product.aspx.cs">
+      <DependentUpon>Edit_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit_Product.aspx.designer.cs">
+      <DependentUpon>Edit_Product.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ManageAccounts.aspx.cs">
       <DependentUpon>ManageAccounts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\ManageAccounts.aspx.designer.cs">
       <DependentUpon>ManageAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageProducts.aspx.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageProducts.aspx.designer.cs">
+      <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageRevenue.aspx.cs">
       <DependentUpon>ManageRevenue.aspx</DependentUpon>
@@ -115,6 +140,7 @@
     <Compile Include="Admin\ManageRevenue.aspx.designer.cs">
       <DependentUpon>ManageRevenue.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Product.cs" />
     <Compile Include="Admin\Update_Account.aspx.cs">
       <DependentUpon>Update_Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

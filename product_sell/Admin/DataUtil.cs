@@ -17,6 +17,114 @@ namespace product_sell.Admin
             con = new SqlConnection(sqlCon);
         }
 
+        public List<Product> Product()
+        {
+            List<Product> sp = new List<Product>();
+            string sql = "select * from Product";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while(rd.Read())
+            {
+                Product p = new Product();
+                p.product_id = (int)rd["product_id"];
+                p.SKU = (string)rd["SKU"];
+                p.description = (string)rd["description"];
+                p.price = (decimal)rd["price"];
+                p.stock = (int)rd["stock"];
+                p.Category_catego = (int)rd["Category_catego"];
+                p.image = (string)rd["image"];
+                sp.Add(p);
+            }
+            con.Close();
+            return sp;
+        }
+        //=======================
+        public List<Category> Category()
+        {
+            List<Category> sp = new List<Category>();
+            string sql = "select * from Category";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                Category dm = new Category();
+                dm.category_id = (int)rd["category_id"];
+                dm.name = (string)rd["name"];
+                sp.Add(dm);
+            }
+            con.Close();
+            return sp;
+        }
+        //===================
+        public void ThemSP(Product p)
+        {
+            con.Open();
+            string sql = "insert into Product values (@SKU, @description, @price, @stock, @Category_catego, @image)";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("SKU", p.SKU);
+            cmd.Parameters.AddWithValue("description", p.description);
+            cmd.Parameters.AddWithValue("price", p.price);
+            cmd.Parameters.AddWithValue("stock", p.stock);
+            cmd.Parameters.AddWithValue("Category_catego", p.Category_catego);
+            cmd.Parameters.AddWithValue("image", p.image);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public void XoaSP(int product_id)
+        {
+            con.Open();
+            String strSql = "delete from Product where product_id=@product_id";
+            SqlCommand cmd = new SqlCommand(strSql, con);
+            cmd.Parameters.AddWithValue("product_id", product_id);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //========================
+        public Product Layra1SP(int product_id)
+        {
+            List<Product> sp = new List<Product>();
+            string sql = "select * from Product where product_id=@product_id";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("product_id", product_id);
+            Product p = null;
+            SqlDataReader rd = cmd.ExecuteReader();
+            if (rd.Read())
+            {
+                p = new Product();
+                p.product_id = (int)rd["product_id"];
+                p.SKU = (string)rd["SKU"];
+                p.description = (string)rd["description"];
+                p.price = (decimal)rd["price"];
+                p.stock = (int)rd["stock"];
+                p.Category_catego = (int)rd["Category_catego"];
+                p.image = (string)rd["image"];
+                
+            }
+            con.Close();
+            return p;
+        }
+
+        //========================
+        public void CapnhatSP(Product p)
+        {
+            con.Open();
+            string sql = "update Product set SKU=@SKU, description=@description, price=@price, stock=@stock, Category_catego=@Category_catego, image=@image where product_id=@product_id";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("SKU", p.SKU);
+            cmd.Parameters.AddWithValue("description", p.description);
+            cmd.Parameters.AddWithValue("price", p.price);
+            cmd.Parameters.AddWithValue("stock", p.stock);
+            cmd.Parameters.AddWithValue("Category_catego", p.Category_catego);
+            cmd.Parameters.AddWithValue("image", p.image);
+            cmd.Parameters.AddWithValue("product_id", p.product_id);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
         // Lấy danh sách tài khoản từ cơ sở dữ liệu
         public List<Account> Account()
         {
