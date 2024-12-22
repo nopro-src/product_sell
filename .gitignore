@@ -1,0 +1,20 @@
+# Ignore temporary files and folders
+bin/
+obj/
+Debug/
+Release/
+
+# Ignore user-specific and system-specific files
+*.user
+*.suo
+*.cache
+*.pdb
+*.log
+
+# Ignore build files
+*.dll
+*.exe
+
+# Ignore IIS Express settings
+.vs/
+ApplicationHost.config
