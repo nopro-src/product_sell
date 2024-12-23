@@ -70,7 +70,6 @@
     <Content Include="Admin\AddAccounts.aspx" />
     <Content Include="Admin\Add_Product.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
-    <Content Include="Admin\EditOrders.aspx" />
     <Content Include="Admin\Edit_Product.aspx" />
     <Content Include="Admin\ManageAccounts.aspx" />
     <Content Include="Admin\ManageOrders.aspx" />
@@ -81,10 +80,13 @@
     <Content Include="Client\Cart.aspx" />
     <Content Include="Client\Giay.aspx" />
     <Content Include="Client\Home.aspx" />
+    <Content Include="Client\NewProducts.aspx" />
     <Content Include="Client\Order.aspx" />
     <Content Include="Client\Quan.aspx" />
+    <Content Include="Client\StyleCart.css" />
     <Content Include="Client\StyleProduct.css" />
     <Content Include="Client\Styles_Master.css" />
+    <Content Include="Client\TopProducts.aspx" />
     <Content Include="Login_Register\ForgotPassword.aspx" />
     <Content Include="Login_Register\Login.aspx" />
     <Content Include="Login_Register\Register.aspx" />
@@ -122,13 +124,6 @@
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\DataUtil.cs" />
-    <Compile Include="Admin\EditOrders.aspx.cs">
-      <DependentUpon>EditOrders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\EditOrders.aspx.designer.cs">
-      <DependentUpon>EditOrders.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Admin\Edit_Product.aspx.cs">
       <DependentUpon>Edit_Product.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,7 +152,6 @@
     <Compile Include="Admin\ManageProducts.aspx.designer.cs">
       <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Order.cs" />
     <Compile Include="Admin\Product.cs" />
     <Compile Include="Admin\SalesReport.aspx.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
@@ -166,7 +160,6 @@
     <Compile Include="Admin\SalesReport.aspx.designer.cs">
       <DependentUpon>SalesReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Shipment.cs" />
     <Compile Include="Admin\Update_Account.aspx.cs">
       <DependentUpon>Update_Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,6 +202,13 @@
     <Compile Include="Client\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\NewProducts.aspx.cs">
+      <DependentUpon>NewProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\NewProducts.aspx.designer.cs">
+      <DependentUpon>NewProducts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\Order.aspx.cs">
       <DependentUpon>Order.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -222,6 +222,13 @@
     </Compile>
     <Compile Include="Client\Quan.aspx.designer.cs">
       <DependentUpon>Quan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\TopProducts.aspx.cs">
+      <DependentUpon>TopProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\TopProducts.aspx.designer.cs">
+      <DependentUpon>TopProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login_Register\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>

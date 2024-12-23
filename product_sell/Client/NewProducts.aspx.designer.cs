@@ -11,26 +11,35 @@ namespace product_sell.Client
 {
 
 
-    public partial class Cart
+    public partial class NewProducts
     {
 
         /// <summary>
-        /// form1 control.
+        /// lblWelcome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblWelcome;
 
         /// <summary>
-        /// CartRepeater control.
+        /// ProductRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater CartRepeater;
+        protected global::System.Web.UI.WebControls.Repeater ProductRepeater;
+
+        /// <summary>
+        /// NoProductMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal NoProductMessage;
 
         /// <summary>
         /// CartMessage control.
@@ -40,14 +49,5 @@ namespace product_sell.Client
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal CartMessage;
-
-        /// <summary>
-        /// btnOrder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOrder;
     }
 }

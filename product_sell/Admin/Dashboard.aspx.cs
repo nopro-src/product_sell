@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace product_sell.Admin
 {
@@ -11,7 +7,22 @@ namespace product_sell.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+                // Kiểm tra session
+                if (Session["Username"] != null && Session["UserRole"] != null)
+                {
+                    // Hiển thị tên đăng nhập của admin
+                    string username = Session["Username"].ToString();
+                    lblWelcome.Text = $"Welcome, {username}!";
+                }
+                else
+                {
+                    // Nếu không có session, chuyển hướng về trang đăng nhập
+                    Response.Redirect("~/Login_Register/Login.aspx", false);
+                }
+            }
         }
     }
 }

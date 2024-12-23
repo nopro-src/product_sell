@@ -65,10 +65,12 @@ namespace product_sell.Client
             }
         }
 
-        protected void placeOrder()
+        protected void PlaceOrder_Click(object sender, EventArgs e)
         {
-            // Code xử lý đặt hàng, chuyển đến trang "Order.aspx".
+            // Chuyển đến trang Order.aspx
             Response.Redirect("~/Client/Order.aspx");
         }
+
+
     }
 }

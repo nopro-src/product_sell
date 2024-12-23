@@ -4,103 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Giỏ hàng</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f9f9f9;
-        }
-        form {
-            width: 90%;
-            max-width: 800px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .cart-item {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
-        }
-        .cart-item img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-        .cart-item-details {
-            flex: 1;
-            font-size: 14px;
-        }
-        .cart-item-details h3 {
-            margin: 0 0 5px 0;
-        }
-        .cart-item-details p {
-            margin: 5px 0;
-        }
-        .cart-item-details .price {
-            color: red;
-            font-weight: bold;
-        }
-        .cart-item-actions {
-            display: flex;
-            align-items: center;
-        }
-        .cart-item-actions input[type="number"] {
-            width: 50px;
-            text-align: center;
-            border: 1px solid #ccc;
-            margin: 0 5px;
-            font-size: 14px;
-        }
-        .cart-item-actions button {
-            width: 30px;
-            height: 30px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .cart-item-actions button:hover {
-            background-color: #45a049;
-        }
-        .cart-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .cart-footer button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .cart-footer button:hover {
-            background-color: #45a049;
-        }
-        .cart-footer .btn-cancel {
-            background-color: #f44336;
-        }
-        .cart-footer .btn-cancel:hover {
-            background-color: #e53935;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="StyleCart.css" />
     <script>
         function updateQuantity(button, isIncrement) {
             const quantityInput = button.parentElement.querySelector('input[type="number"]');
@@ -148,7 +52,7 @@
             <!-- Footer with Order and Cancel Button -->
             <div class="cart-footer">
                 <button type="button" id="btnCancel" onclick="location.href='Home.aspx'" class="btn-cancel">Bỏ qua</button>
-                <button type="button" id="btnOrder" onclick="placeOrder()">Đặt hàng</button>
+                <asp:Button ID="btnOrder" runat="server" Text="Đặt hàng" CssClass="btn-order" OnClick="PlaceOrder_Click" />
             </div>
         </div>
     </form>
