@@ -11,61 +11,70 @@ namespace product_sell.Admin
 {
 
 
-    public partial class ManageProducts
+    public partial class EditOrders
     {
 
         /// <summary>
-        /// btnAdd control.
+        /// tblds control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Table tblds;
 
         /// <summary>
-        /// txtSearchById control.
+        /// txtorder_id control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchById;
+        protected global::System.Web.UI.WebControls.TextBox txtorder_id;
 
         /// <summary>
-        /// txtSearchByDescription control.
+        /// dddm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchByDescription;
+        protected global::System.Web.UI.WebControls.DropDownList dddm;
 
         /// <summary>
-        /// btnSearch control.
+        /// btnEdit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.Button btnEdit;
 
         /// <summary>
-        /// btnClearSearch control.
+        /// btnCancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClearSearch;
+        protected global::System.Web.UI.WebControls.Button btnCancel;
 
         /// <summary>
-        /// grdDs control.
+        /// mg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdDs;
+        protected global::System.Web.UI.WebControls.Label mg;
+
+        /// <summary>
+        /// bt2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bt2;
     }
 }

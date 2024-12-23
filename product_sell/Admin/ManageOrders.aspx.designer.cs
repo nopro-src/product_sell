@@ -11,25 +11,16 @@ namespace product_sell.Admin
 {
 
 
-    public partial class ManageAccounts
+    public partial class ManageOders
     {
 
         /// <summary>
-        /// btn_add control.
+        /// grdDs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add;
-
-        /// <summary>
-        /// grid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grid;
+        protected global::System.Web.UI.WebControls.GridView grdDs;
     }
 }

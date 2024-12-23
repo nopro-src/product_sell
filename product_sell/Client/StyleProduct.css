@@ -1,0 +1,66 @@
+﻿/* Định dạng chung cho danh sách sản phẩm */
+.product-list {
+    display: grid;
+    grid-template-columns: auto auto auto auto; /* 4 sản phẩm trên 1 hàng */
+    gap: 10px; /* Giảm khoảng cách giữa các sản phẩm */
+    margin: 10px auto; /* Căn giữa danh sách sản phẩm */
+    padding: 10px; /* Tăng padding bên trong khung chứa */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+}
+
+
+/* Định dạng mỗi sản phẩm */
+.product-item {
+    flex: 1 1 calc(25% - 20px); /* Chiều rộng 25% trừ khoảng cách (gap) */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng chiều rộng */
+    border: 1px solid #ddd; /* Viền nhẹ cho mỗi sản phẩm */
+    border-radius: 8px; /* Bo góc */
+    overflow: hidden;
+    text-align: center; /* Canh giữa nội dung */
+    background-color: #fff; /* Nền trắng */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    padding: 15px;
+}
+
+/* Định dạng hình ảnh sản phẩm */
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* Định dạng tiêu đề sản phẩm */
+.product-title {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Định dạng SKU */
+.product-sku {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Định dạng giá sản phẩm */
+.product-price {
+    font-size: 1em;
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Định dạng số lượng */
+.product-stock {
+    font-size: 0.9em;
+    color: #5cb85c;
+}
+
+/* Thêm hiệu ứng hover cho sản phẩm */
+.product-item:hover {
+    transform: scale(1.05); /* Phóng to nhẹ */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

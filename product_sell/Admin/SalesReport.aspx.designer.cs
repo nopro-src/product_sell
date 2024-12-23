@@ -11,61 +11,43 @@ namespace product_sell.Admin
 {
 
 
-    public partial class ManageProducts
+    public partial class WebForm1
     {
 
         /// <summary>
-        /// btnAdd control.
+        /// lblTotalRevenue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Label lblTotalRevenue;
 
         /// <summary>
-        /// txtSearchById control.
+        /// gvSalesReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchById;
+        protected global::System.Web.UI.WebControls.GridView gvSalesReport;
 
         /// <summary>
-        /// txtSearchByDescription control.
+        /// gvPurchaseHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchByDescription;
+        protected global::System.Web.UI.WebControls.GridView gvPurchaseHistory;
 
         /// <summary>
-        /// btnSearch control.
+        /// gvTopSellingProducts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
-
-        /// <summary>
-        /// btnClearSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnClearSearch;
-
-        /// <summary>
-        /// grdDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdDs;
+        protected global::System.Web.UI.WebControls.GridView gvTopSellingProducts;
     }
 }

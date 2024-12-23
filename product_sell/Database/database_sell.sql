@@ -220,3 +220,21 @@ select * from [Order]
 select * from Order_Item
 select * from Payment
 select * from Shipment
+
+select sum(quantity * price) as Total_Amount
+From Order_Item
+
+select  sum(quantity * price) as One_Product
+From Order_Item q
+
+
+--Tổng tiền từng đơn hàng
+SELECT
+    o.order_id,
+    SUM(oi.quantity * oi.price) AS total_amount
+FROM
+    [Order] o
+JOIN
+    Order_Item oi ON o.order_id = oi.Order_order_i
+GROUP BY
+    o.order_id;

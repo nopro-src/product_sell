@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Client.master.cs" Inherits="product_sell.Client.Client" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Product Sell</title>
+    <link rel="stylesheet" type="text/css" href="Styles_Master.css" /> <!-- Optional external CSS -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div id="header">
+            <div class="logo">
+                <img src="../images/logoshop.jpg" alt="Logo">
+
+                Shop thời trang
+            </div>
+            <div id="search-bar">
+                <asp:TextBox ID="txtSearch" runat="server" placeholder="Tìm kiếm sản phẩm..." CssClass="search-input"></asp:TextBox>
+                <asp:Button ID="btnSearch" runat="server" Text="Tìm kiếm" OnClick="btnSearch_Click" CssClass="search-button" />
+            </div>
+            <div class="user-options">
+                <a href="Cart.aspx">Giỏ hàng(<asp:Literal ID="CartItemCount" runat="server"></asp:Literal>)</a>
+                <a href="#">Tài khoản</a>
+                <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="logout-button">Đăng xuất</asp:LinkButton>
+            </div>
+        </div>
+
+        <!-- Menu -->
+        <div id="menu">
+            <ul>
+                <li><a href="Home.aspx">Trang chủ</a></li>
+                <li id="cha"><a href="Home.aspx">Danh mục sản phẩm</a>
+                    <ul id="con">
+                        <li><a href="Ao.aspx">Áo</a></li>
+                        <li><a href="Quan.aspx">Quần</a></li>
+                        <li><a href="Giay.aspx">Giày</a></li>
+                    </ul>
+                </li>
+                <li><a href ="TopProducts.aspx">Top sản phẩm</a></li>
+                <li><a href ="NewProducts.aspx">Sản phẩm mới</a></li>
+                <li><a href ="Contact.aspx">Liên hệ</a></li>
+            </ul>
+        </div>
+               
+        <div class="main">
+            <!-- Left Sidebar -->
+            <div id="sidebar">
+                <h3>Danh mục</h3>
+                <ul>
+                    <li><a href="Ao.aspx">Áo</a></li>
+                    <li><a href="Quan.aspx">Quần</a></li>
+                    <li><a href="Giay.aspx">Giày</a></li>
+                    <li><a href="TopProducts.aspx">Top sản phẩm</a></li>
+                    <li><a href="NewProducts.aspx">Sản phẩm mới</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Content Area -->
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <!-- Nội dung trang Home hoặc các trang khác sẽ được đặt ở đây -->
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <div id="footer">
+            <p>&copy; 2024 MaxxShop. All Rights Reserved. <a href="Contact.aspx">Liên hệ</a></p>
+            <p><a href="https://facebook.com">Facebook</a> | <a href="https://twitter.com">Twitter</a> | <a href="https://instagram.com">Instagram</a></p>
+        </div>
+    </form>
+</body>
+</html>

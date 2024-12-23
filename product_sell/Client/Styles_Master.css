@@ -1,0 +1,251 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    box-sizing: border-box;
+}
+
+#header {
+    background-color: #222;
+    color: white;
+    position: fixed;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+    #header .logo {
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+    }
+
+        #header .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+    /* Search Bar */
+    /* Search Bar */
+    #header .search-bar {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        #header .search-bar input {
+            width: 40%; /* Điều chỉnh chiều rộng */
+            padding: 10px 15px; /* Tăng padding */
+            font-size: 16px; /* Kích thước chữ */
+            border: 1px solid #ccc; /* Viền nhạt */
+            border-radius: 20px; /* Bo góc tròn */
+            transition: all 0.3s ease; /* Hiệu ứng khi focus */
+        }
+
+            #header .search-bar input:focus {
+                border-color: #ff3399; /* Đổi màu viền khi focus */
+                outline: none;
+                box-shadow: 0 0 10px rgba(255, 51, 153, 0.5); /* Hiệu ứng bóng */
+            }
+
+        #header .search-bar button {
+            padding: 10px 20px; /* Kích thước nút */
+            margin-left: 10px; /* Khoảng cách giữa nút và ô tìm kiếm */
+            background-color: #ff3399; /* Màu nền nút */
+            color: white; /* Màu chữ */
+            border: none;
+            border-radius: 20px; /* Bo góc nút */
+            cursor: pointer;
+            font-size: 16px; /* Kích thước chữ */
+            transition: background-color 0.3s ease; /* Hiệu ứng hover */
+        }
+
+            #header .search-bar button:hover {
+                background-color: #cc2977; /* Màu nền khi hover */
+            }
+
+
+    #header .user-options a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+        #header .user-options a:hover {
+            color: #ff3399;
+        }
+
+/* Menu */
+#menu {
+    background-color: black;
+    height: 40px;
+}
+
+    #menu ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu > ul > li {
+        position: relative;
+        margin: 0 10px;
+    }
+
+        #menu > ul > li > a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 0 15px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        #menu > ul > li:hover {
+            background-color: #ff3399;
+        }
+
+        /* Submenu */
+        #menu > ul > li > #con {
+            display: none;
+            position: absolute;
+            background-color: black;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #menu > ul > li:hover > #con {
+            display: block;
+        }
+
+#con ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#con li {
+    border-bottom: solid 1px white;
+}
+
+    #con li:last-child {
+        border-bottom: none;
+    }
+
+    #con li a {
+        text-decoration: none;
+        color: white;
+        display: block;
+        padding: 10px;
+    }
+
+    #con li:hover {
+        background-color: #ff3399;
+    }
+
+/* Sidebar */
+.main {
+    display: flex;
+    flex-wrap: nowrap; /* Đảm bảo Sidebar và Content không xuống dòng */
+    width: 100%; /* Đảm bảo Flex chiếm hết không gian cha */
+}
+
+#sidebar {
+    flex: 0 0 15%; /* Sidebar cố định 15% chiều rộng */
+    max-width: 15%; /* Đảm bảo không vượt quá */
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+    flex: 1; /* Content chiếm toàn bộ không gian còn lại */
+    padding: 20px;
+}
+
+    #sidebar h3 {
+        margin-top: 0;
+        color: #222;
+    }
+
+    #sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        #sidebar ul li {
+            margin: 10px 0;
+        }
+
+            #sidebar ul li a {
+                text-decoration: none;
+                color: #444;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+                #sidebar ul li a:hover {
+                    color: #007BFF;
+                }
+
+/* Main Content */
+#content {
+    width: 80%;
+    padding: 20px;
+}
+
+/* Footer Styles */
+#footer {
+    height:5%;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    #footer a {
+        color: #ffcc00;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #header {
+        flex-wrap: wrap;
+    }
+
+        #header .search-bar input {
+            width: 80%;
+        }
+
+    #menu ul {
+        flex-direction: column;
+    }
+
+    #menu > ul > li > #con {
+        left: 0;
+        transform: none;
+    }
+}
+

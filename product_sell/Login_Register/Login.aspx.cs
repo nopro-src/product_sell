@@ -8,8 +8,8 @@ namespace product_sell.Login_Register
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
+
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -17,27 +17,32 @@ namespace product_sell.Login_Register
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                // Sử dụng ScriptManager để hiển thị alert mà không reload trang
                 ScriptManager.RegisterStartupScript(UpdatePanel1, UpdatePanel1.GetType(), "showalert", "alert('Vui lòng nhập tên đăng nhập và mật khẩu.');", true);
                 return;
             }
-            // kết nối database
+
             string sqlCon = "Data Source=NOPRO\\TRUNGKIEN;Initial Catalog=Shopping;Integrated Security=True;Encrypt=False";
             using (SqlConnection con = new SqlConnection(sqlCon))
             {
                 try
                 {
                     con.Open();
-                    string sql = "SELECT role FROM Customer WHERE (email = @username OR phone_number = @username) AND password = @password";
+                    string sql = "SELECT customer_id, role FROM Customer WHERE (email = @username OR phone_number = @username) AND password = @password";
                     using (SqlCommand cmd = new SqlCommand(sql, con))
                     {
                         cmd.Parameters.AddWithValue("@username", username);
                         cmd.Parameters.AddWithValue("@password", password);
 
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
                         {
-                            string role = result.ToString();
+                            int userId = Convert.ToInt32(reader["customer_id"]);
+                            string role = reader["role"].ToString();
+
+                            Session["UserId"] = userId;
+                            Session["UserRole"] = role;
+                            Session["Username"] = username;
+
                             if (role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
                             {
                                 Response.Redirect("~/Admin/Dashboard.aspx", false);
@@ -59,7 +64,5 @@ namespace product_sell.Login_Register
                 }
             }
         }
-
-
     }
 }
