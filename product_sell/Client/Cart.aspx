@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="StyleCart.css" />
     <script>
         function updateQuantity(button, isIncrement) {
-            const quantityInput = button.parentElement.querySelector('input[type="number"]');
+            const quantityInput = button.parentElement.querySelector('input[type="number"], input[type="text"]');
             let currentQuantity = parseInt(quantityInput.value) || 1;
             currentQuantity = isIncrement ? currentQuantity + 1 : Math.max(1, currentQuantity - 1);
             quantityInput.value = currentQuantity;
@@ -21,32 +21,26 @@
             <asp:Repeater ID="CartRepeater" runat="server">
                 <ItemTemplate>
                     <div class="cart-item">
-                        <!-- CheckBox -->
-                        <input type="checkbox" name="selectProduct" value='<%# Eval("product_id") %>' />
-
-                        <!-- Product Image -->
+                        <asp:CheckBox ID="SelectProduct" runat="server" />
                         <asp:Image ID="Image1" runat="server"
                             ImageUrl='<%# "~/images/" + Eval("image") %>'
                             Width="100px" Height="100px"
-                            AlternateText="No Image"
-                            class="product-image" />
-
-                        <!-- Product Details -->
+                            AlternateText="No Image" class="product-image" />
                         <div class="cart-item-details">
                             <h3><%# Eval("description") %></h3>
                             <p>SKU: <%# Eval("SKU") %></p>
-                            <p class="price">Price: $<%# Eval("price", "{0:0.00}") %></p>
+                            <p class="price">Giá: $<%# Eval("price", "{0:0.00}") %></p>
                         </div>
-
-                        <!-- Quantity Adjustment -->
                         <div class="cart-item-actions">
                             <button type="button" onclick="updateQuantity(this, false)">-</button>
-                            <input type="number" min="1" value='<%# Eval("quantity") %>' />
+                            <asp:TextBox ID="QuantityTextBox" runat="server" Text='<%# Eval("quantity") %>' CssClass="quantity-box" />
                             <button type="button" onclick="updateQuantity(this, true)">+</button>
                         </div>
+                        <asp:HiddenField ID="ProductIdHiddenField" runat="server" Value='<%# Eval("product_id") %>' />
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
+
             <asp:Literal ID="CartMessage" runat="server"></asp:Literal>
 
             <!-- Footer with Order and Cancel Button -->

@@ -297,16 +297,17 @@ namespace product_sell.Admin
             string sqlCon = "Data Source=NOPRO\\TRUNGKIEN;Initial Catalog=Shopping;Integrated Security=True;Encrypt=False";
 
             string sql = @"
-        SELECT
-    o.order_id,
-    SUM(oi.quantity * oi.price) AS total_amount,
-	SUM(oi.quantity) AS total_quantity
+       SELECT
+    o.order_id, o.status,
+    SUM(oi.quantity * oi.price) AS total_amount
 FROM
-    [Order] o
+    [Order] o 
 JOIN
     Order_Item oi ON o.order_id = oi.Order_order_i
+WHERE 
+    o.status = 'success'
 GROUP BY
-    o.order_id;";
+    o.order_id, o.status;";
 
             DataTable dt = new DataTable();
 
@@ -332,45 +333,6 @@ GROUP BY
         //Lịch sử mua hàng
         public DataTable GetPurchaseHistory()
         {
-            //            string sqlCon = "Data Source=LAPTOP-H87TDBVU\\VIETBACH;Initial Catalog=Shopping;Integrated Security=True";  // Kiểm tra chuỗi kết nối
-
-            //            string sql = @"
-            //SELECT 
-            //    c.customer_id,
-            //    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
-            //    o.order_id,
-            //    o.order_date,
-            //    o.total_price,
-            //    o.status,
-            //    p.SKU,
-            //    p.description AS product_name,
-            //    oi.quantity,
-            //    oi.price AS unit_price,
-            //    (oi.quantity * oi.price) AS total_item_price
-            //FROM 
-            //    Customer c
-            //JOIN 
-            //    [Order] o ON c.customer_id = o.Customer_custo
-            //JOIN 
-            //    Order_Item oi ON o.order_id = oi.Order_order_i
-            //JOIN 
-            //    Product p ON oi.Product_produ = p.product_id
-            //ORDER BY 
-            //    c.customer_id, o.order_date DESC, o.order_id;";
-
-            //    SqlDataAdapter adapter = new SqlDataAdapter(sql, sqlCon);  // Sử dụng chuỗi kết nối tại đây
-            //    DataTable dt = new DataTable();
-
-            //    try
-            //    {
-            //        adapter.Fill(dt);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        throw new Exception("Có lỗi xảy ra khi lấy lịch sử mua hàng: " + ex.Message);
-            //    }
-            //    return dt;
-            //}
             string sqlCon = "Data Source=NOPRO\\TRUNGKIEN;Initial Catalog=Shopping;Integrated Security=True;Encrypt=False";
 
             string sql = @"
@@ -463,8 +425,14 @@ ORDER BY
             string sqlCon = "Data Source=NOPRO\\TRUNGKIEN;Initial Catalog=Shopping;Integrated Security=True;Encrypt=False";
 
             string sql = @"
-    select sum(quantity * price) as Total_Amount
-    From Order_Item";
+    SELECT
+    SUM(oi.quantity * oi.price) AS total_income
+FROM
+    [Order] o
+JOIN
+    Order_Item oi ON o.order_id = oi.Order_order_i
+WHERE
+    o.status = 'success';";
 
             decimal totalAmount = 0;  // Khởi tạo giá trị mặc định là 0
 
@@ -491,6 +459,32 @@ ORDER BY
             }
 
             return totalAmount;  // Trả về tổng doanh thu dưới dạng decimal
-        }   
+        }
+        public DataTable ExecuteQuery(string query)
+        {
+            string sqlCon = "Data Source=NOPRO\\TRUNGKIEN;Initial Catalog=Shopping;Integrated Security=True;Encrypt=False";
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(sqlCon))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        conn.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thực hiện truy vấn: " + ex.Message);
+            }
+
+            return dt;
+        }
     }
 }

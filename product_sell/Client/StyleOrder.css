@@ -1,0 +1,126 @@
+﻿/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Đảm bảo phần đầu không bị che khuất */
+    height: 100vh;
+    overflow-y: auto; /* Đảm bảo có thể cuộn nếu nội dung dài */
+}
+
+/* Form container */
+.container {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Section titles */
+.section-title {
+    font-size: 1.8em;
+    color: #333333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Product table */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+    .product-table th, .product-table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    .product-table th {
+        background-color: #007BFF;
+        color: white;
+        font-weight: bold;
+    }
+
+    .product-table td {
+        background-color: #f9f9f9;
+    }
+
+/* Input fields */
+.input-box {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+    .input-box:focus {
+        border-color: #007BFF;
+        outline: none;
+    }
+
+/* Dropdown */
+.dropdown {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Buttons */
+.order-button, .home-button {
+    width: 48%;
+    padding: 12px;
+    margin: 10px 1%;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.order-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+    .order-button:hover {
+        background-color: #0056b3;
+    }
+
+.home-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+    .home-button:hover {
+        background-color: #5a6268;
+    }
+
+/* Total amount and order success messages */
+.total-amount, .order-success {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333333;
+}
+
+    .total-amount h3 {
+        color: #007BFF;
+    }

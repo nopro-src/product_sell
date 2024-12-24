@@ -25,7 +25,7 @@
             </div>
             <div class="user-options">
                 <a href="Cart.aspx">Giỏ hàng(<asp:Literal ID="CartItemCount" runat="server"></asp:Literal>)</a>
-                <a href="#">Tài khoản</a>
+                <a href="Account.aspx">Tài khoản</a>
                 <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="logout-button">Đăng xuất</asp:LinkButton>
             </div>
         </div>

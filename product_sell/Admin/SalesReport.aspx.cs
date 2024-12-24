@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace product_sell.Admin
 {
@@ -19,6 +18,7 @@ namespace product_sell.Admin
                 LoadPurchaseHistory(); // Tải lịch sử mua hàng
                 LoadTopSellingProducts(); // Tải top sản phẩm bán chạy
                 LoadTotalRevenue(); // Tải tổng doanh thu
+
             }
         }
 
@@ -32,7 +32,6 @@ namespace product_sell.Admin
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi khi không thể tải báo cáo bán hàng
                 Response.Write($"<script>alert('Có lỗi xảy ra khi tải báo cáo bán hàng: {ex.Message}');</script>");
             }
         }
@@ -47,7 +46,6 @@ namespace product_sell.Admin
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi khi không thể tải lịch sử mua hàng
                 Response.Write($"<script>alert('Có lỗi xảy ra khi tải lịch sử mua hàng: {ex.Message}');</script>");
             }
         }
@@ -62,7 +60,6 @@ namespace product_sell.Admin
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi khi không thể tải top bán chạy
                 Response.Write($"<script>alert('Có lỗi xảy ra khi tải top bán chạy: {ex.Message}');</script>");
             }
         }
@@ -71,24 +68,15 @@ namespace product_sell.Admin
         {
             try
             {
-                // Gọi phương thức tính tổng doanh thu
                 decimal totalRevenue = data.GetTotalRevenue();
-                lblTotalRevenue.Text = "Tổng doanh thu: " + totalRevenue.ToString("C"); // Hiển thị tổng doanh thu trên Label
+                lblTotalRevenue.Text = "Tổng doanh thu: " + totalRevenue.ToString("C");
             }
             catch (Exception ex)
             {
-                // Xử lý lỗi khi không thể tải tổng doanh thu
                 Response.Write($"<script>alert('Có lỗi xảy ra khi tải tổng doanh thu: {ex.Message}');</script>");
             }
         }
 
-        // Xử lý các sự kiện RowDataBound nếu cần thiết
-        protected void gvTopSellingProducts_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                // Có thể thêm xử lý thêm khi dữ liệu được bind vào GridView
-            }
-        }
+        // Phương thức để tải dữ liệu biểu đồ doanh thu
     }
 }

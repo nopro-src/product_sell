@@ -76,14 +76,17 @@
     <Content Include="Admin\ManageProducts.aspx" />
     <Content Include="Admin\SalesReport.aspx" />
     <Content Include="Admin\Update_Account.aspx" />
+    <Content Include="Client\Account.aspx" />
     <Content Include="Client\Ao.aspx" />
     <Content Include="Client\Cart.aspx" />
+    <Content Include="Client\Contact.aspx" />
     <Content Include="Client\Giay.aspx" />
     <Content Include="Client\Home.aspx" />
     <Content Include="Client\NewProducts.aspx" />
     <Content Include="Client\Order.aspx" />
     <Content Include="Client\Quan.aspx" />
     <Content Include="Client\StyleCart.css" />
+    <Content Include="Client\StyleOrder.css" />
     <Content Include="Client\StyleProduct.css" />
     <Content Include="Client\Styles_Master.css" />
     <Content Include="Client\TopProducts.aspx" />
@@ -167,6 +170,13 @@
     <Compile Include="Admin\Update_Account.aspx.designer.cs">
       <DependentUpon>Update_Account.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\Ao.aspx.cs">
       <DependentUpon>Ao.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,6 +197,13 @@
     </Compile>
     <Compile Include="Client\Client.Master.designer.cs">
       <DependentUpon>Client.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\Giay.aspx.cs">
       <DependentUpon>Giay.aspx</DependentUpon>
